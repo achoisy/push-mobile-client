@@ -1,0 +1,3 @@
+rootProject.name = 'pushclient'
+
+include ':app'
