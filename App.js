@@ -6,8 +6,8 @@ import MessageList from './src/components/MessageList';
 
 const App = () => (
     <View style={{ flex: 1 }}>
-        <Header headerText={'Albums'} />
-        <AlbumList />
+        <Header headerText={'Mairie du Vauclin'} />
+        <MessageList />
     </View>
 );
 

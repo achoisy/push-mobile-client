@@ -13,13 +13,17 @@
 #import <React/RCTRootView.h>
 
 @implementation AppDelegate
+@synthesize oneSignal = _oneSignal;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-
+  
+  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
+                                                         appId:@"4ac66efb-c4a3-436c-aac2-a1702fb00f00"];
+  
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"pushclient"
                                                initialProperties:nil
