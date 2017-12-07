@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, AsyncStorage } from 'react-native';
 import PouchDB from 'pouchdb-react-native';
 import _ from 'lodash';
+import Swiper from 'react-native-swiper';
 // import axios from 'axios';
 import OneSignal from 'react-native-onesignal';
 import MessageDetail from './MessageDetail';
