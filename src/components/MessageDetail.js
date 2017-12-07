@@ -9,6 +9,7 @@ const MessageDetail = ({ message }) => {
     headings,
     contents,
     links,
+    images,
     sender,
   } = message;
 
@@ -41,7 +42,7 @@ const MessageDetail = ({ message }) => {
         />
       </CardSection>
       <CardSection>
-        <Button onPress={() => Linking.openURL("http://ville-vauclin.fr/")}>
+        <Button onPress={() => Linking.openURL('http://ville-vauclin.fr/')}>
           Partager
         </Button>
       </CardSection>
