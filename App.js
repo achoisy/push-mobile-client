@@ -1,14 +1,16 @@
 import React from 'react';
-import { AppRegistry, View } from 'react-native';
+import { Container } from 'native-base';
 import Header from './src/components/header';
 import MessageList from './src/components/MessageList';
+import Footer from './src/components/footer';
 
 
 const App = () => (
-    <View style={{ flex: 1 }}>
-        <Header headerText={'Mairie du Vauclin'} />
-        <MessageList />
-    </View>
+  <Container>
+    <Header headerText={'Mairie du Vauclin'} />
+    <MessageList />
+    <Footer />
+  </Container>
 );
 
 export default App;

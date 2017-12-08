@@ -1,32 +1,49 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Header, Left, Body, Right, Title, Icon, Button, Thumbnail } from 'native-base';
+import { View, Text, Image, Linking } from 'react-native';
 
-const Header = (props) => {
-    const { textStyles, viewStyle } = styles;
+class HeaderSection extends Component {
 
+  render() {
     return (
-        <View style={viewStyle}>
-            <Text style={textStyles}>{props.headerText}</Text>
-        </View>
+      <Header>
+          <View style={styles.thumbnailContainerStyle}>
+            <Thumbnail small source={{ uri: 'https://res.cloudinary.com/monmagazine-fr/image/upload/v1512573083/wwe4lcas67xxijfkrz1s.png' }} />
+          </View>
+          <View style={styles.headerContenStyle}>
+            <Text style={styles.headerTexstyle}>Maire du Vauclin</Text>
+            <Text>Recu a 12:35</Text>
+          </View>
+          <Right>
+            <Button transparent>
+              <Icon name='ios-call' />
+            </Button>
+            <Button transparent>
+              <Icon name='ios-menu' />
+            </Button>
+          </Right>
+        </Header>
     );
-};
+  }
+}
 
 const styles = {
-    viewStyle: {
-        backgroundColor: '#F8F8F8',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 60,
-        paddingTop: 15,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        elevation: 2,
-        position: 'relative'
-    },
-    textStyle: {
-        fontSize: 20
-    }
+  tumbnailStyle: {
+    padding: 20,
+  },
+  headerContenStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  },
+  headerTexstyle: {
+    fontSize: 16
+  },
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    marginLeft: 10,
+    marginRight: 10,
+  },
 };
 
-export default Header;
+export default HeaderSection;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, AsyncStorage } from 'react-native';
+import { ScrollView, AsyncStorage, View } from 'react-native';
 import PouchDB from 'pouchdb-react-native';
 import _ from 'lodash';
 import Swiper from 'react-native-swiper';
@@ -93,7 +93,11 @@ class MessageList extends Component {
   renderMessages() {
     console.log('this.state.messages:', this.state.messages);
     return _.reverse(this.state.messages).map(message =>
-      <MessageDetail key={message._id} message={message} />
+      <View key={message._id} >
+        <ScrollView>
+          <MessageDetail message={message} />
+        </ScrollView>
+      </View>
     );
   }
 
@@ -118,9 +122,9 @@ class MessageList extends Component {
 
   render() {
     return (
-      <ScrollView>
-        {this.renderMessages()}
-      </ScrollView>
+      <Swiper showsPagination={false} >
+          {this.renderMessages()}
+      </Swiper>
     );
   }
 }
